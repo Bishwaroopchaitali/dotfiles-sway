@@ -1,0 +1,123 @@
+{
+    "layer": "top", // Waybar becomes the top most layer globally
+    "position": "top", // Waybar position 
+    "height": 13, // Waybar height 
+    "margin-left": 6, //margin around left side of bar
+    "margin-right": 6, //margin around right side of bar
+    "spacing": 14, // Gaps between modules
+
+    // Order of the modules
+    "modules-left": [
+	"custom/power",
+        "sway/workspaces"
+    ],
+    "modules-center": [
+        "wlr/taskbar"
+    ],
+    "modules-right": [
+        "idle_inhibitor",
+	"custom/clipboard",
+	"bluetooth",
+        "pulseaudio",
+        "network",
+	"backlight",
+        "battery",
+        "battery#bat2",
+        "clock"
+    ],
+    
+    // Modules configuration
+    "sway/workspaces": {
+         "disable-scroll": true,
+         "disable-click": false,
+         "warp-on-scroll": false,
+         "all-outputs": true,
+         "format": "{value}",
+	 "persistent-workspaces": {
+         "1": [], // Always show a workspace with name '1', on all outputs if it does not exists
+         "2": [], // Always show a workspace with name '2', on all outputs if it does not exists
+         "3": [], // Always show a workspace with name '3', on all outputs if it does not exists
+         "4": [], // Always show a workspace with name '4', on all outputs if it does not exists
+         "5": [], // Always show a workspace with name '5', on all outputs if it does not exists
+         "6": [] // Always show a workspace with name '6', on all outputs if it does not exists
+    }
+     },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
+    },
+    "wlr/taskbar": {
+        "all-outputs": true,
+	"icon-size": 13,
+        "on-click": "activate"
+    },
+    "clock": {
+	"format": "{:%a %d %b %I:%M %p}",
+	"format-alt": "{:%I:%M %p}",
+	"tooltip": false
+    },
+    "battery": {
+	"interval": 5,
+	"tooltip-format": "Battery-percentage: {capacity}%\n{timeTo}",
+        "format": "{icon}",
+        "format-icons": { 
+              "default": ["󰂃", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+	      "charging": ["󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"],
+	      "plugged": "󰂅"
+
+	}
+	     },
+    "battery#bat2": {
+        "bat": "BAT2"
+    },
+    "network": {
+        "format-wifi": "",
+        "format-ethernet": "{ipaddr}/{cidr} ",
+        "tooltip-format": "Connected-network: {essid}\nSignal-strength: {signalStrength}%",
+        "on-click": "kitty ~/Applications/Tui/nmtui-go",
+        "format-linked": "{ifname} (No IP) ",
+        "format-disconnected": "󰖪"
+    },
+    "custom/clipboard": {
+	"tooltip": false,
+        "format": "{icon}",
+        "format-icons": {
+            "default": ""
+        },
+        "on-click": "kitty clipse"
+    },
+    "bluetooth": {
+	"format-on": "",
+	"format-disabled": "󰂲", 
+	"format-off": "󰂲", 
+	"format-connected": "󰋋",
+	"tooltip-format-disabled": "Bluetooth status: inactive", 
+	"tooltip-format-off": "Bluetooth status: inactive", 
+	"tooltip-format-on": "Bluetooth status: active", 
+	"tooltip-format-connected": "Bluetooth status: active\n\nConnected bluetooth devices:\n{device_alias} - status: {status}",
+        "on-click": "kitty bluetui"
+    },
+    "pulseaudio": {
+        "format": "{icon}",
+        "tooltip-format": "System-volume: {volume}%\nSystem-mic: {format_source}",
+        "format-muted": "",
+        "format-icons": {
+            "default": ["", "", ""]
+        },
+        "on-click": "kitty wiremix"
+    },
+    "custom/power": {
+        "format" : "󰐥",
+		"tooltip": false,
+		"on-click": "echo lol"
+    },
+    "backlight": {
+    "format": "",
+    "tooltip-format": "Screen-brightness: {percent}%\nLeft click to activate Night Light\nRight click to disable Night Light",
+    "on-click": "echo lol",
+    "on-click-right": "echo lol"
+    }
+}

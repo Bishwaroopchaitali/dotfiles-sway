@@ -1,0 +1,15 @@
+############################# Imp startup processes #############################
+
+# Waybar
+exec waybar
+
+# Clipboard
+exec clipse -listen
+
+# On Screen display/indicator
+exec swayosd-server
+
+#################################################################################
+
+include /etc/sway/config.d/*
+include ~/.config/sway/config.d/*

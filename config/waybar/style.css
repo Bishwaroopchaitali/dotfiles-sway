@@ -1,0 +1,82 @@
+* {
+    font-family: "CaskaydiaCove Nerd Font Propo";
+    font-size: 13px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: transparent;
+    color: white;
+    padding: 0;
+    margin: 0;
+}
+
+#workspaces {
+    padding: 0px;
+}
+
+#workspaces button.focused {
+    color: white;
+    font-weight: bold;
+}
+
+#workspaces button {
+    padding: 0px;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.35);
+}
+
+#clipboard #clock, #battery, #cpu, #memory, #network, #pulseaudio, #custom-spotify, #tray, #mode {
+    padding: 0px;
+    margin: 4px;
+}
+
+#clock {
+    margin: 2px;
+}
+
+#battery {
+}
+
+#battery icon {
+    color: red;
+}
+
+#battery.charging {
+}
+
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: black;
+    }
+}
+
+#battery.warning:not(.charging) {
+    color: white;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#cpu {
+}
+
+#memory {
+}
+
+#network {
+}
+
+#network.disconnected {
+    background: transparent;
+}
+
+#pulseaudio {
+}
+
+#pulseaudio.muted {
+}
+

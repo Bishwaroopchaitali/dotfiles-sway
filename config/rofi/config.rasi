@@ -1,0 +1,58 @@
+@import "colors.rasi"
+
+entry {
+    placeholder: "Search...";
+    text-color: @fg;
+    padding: 8px 0 8px 8px;
+}
+
+configuration {
+    font: "CaskaydiaCove Nerd Font 13";
+    lines: 7;
+    fixed-num-lines: false;
+    padding: 10px;
+}
+
+inputbar {
+    children: [entry];
+}
+
+* {
+    separatorcolor: transparent;
+    selected-normal-background: @fg-faded;
+    normal-background: transparent;
+    alternate-normal-background: transparent;
+}
+
+mainbox {
+    border: 2px;
+    border-color: transparent;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+window {
+    border-radius: 11px;
+    border: 2px solid;
+    border-color: @fg;
+    background-color: @bg;
+    padding: 0px;
+    width: 30%;
+}
+
+
+listview {
+    lines: 7;
+    scrollbar: false;
+}
+
+element {
+    padding: 10px 10px;
+    height: 50px;
+    border-radius: 5px;
+    children: [ element-text, element-icon ];
+}
+
+element-text {
+    text-color: @fg;
+}
