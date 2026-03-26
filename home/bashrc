@@ -1,0 +1,16 @@
+# Currently shell prompt is always green, but later theme it with matugen
+PS1='\[\e[32m\]\w\[\e[0m\] ❯ '
+alias c='clear'
+alias cdc='cd ~ && clear'
+alias nv='nvim'
+alias swayset='cd ~/.config/sway/config.d/'
+
+# Yazi functioning
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	command yazi "$@" --cwd-file="$tmp"
+	IFS= read -r -d '' cwd < "$tmp"
+	[ "$cwd" != "$PWD" ] && [ -d "$cwd" ] && builtin cd -- "$cwd"
+	rm -f -- "$tmp"
+}
+
