@@ -1,13 +1,11 @@
-# Instructions
+# Instructions to build setup
 
 - WM: swayfx
-- Lock screen: swaylock, copy the theme & format I chose for login tui, make it into a wallpaper, and then use swaylock indicator and place it somewhere appropriate where it fits, and it should look cohesive with the login greeter
-- Login: sysc-greet using greetd (https://github.com/Nomadcxx/sysc-greet)
+- Lock screen: swaylock, match the vibe of tty 
+- Login: tty
 - Sound: Native pipewire + wiremix tui (https://github.com/tsowell/wiremix)
 - idle settings: Sway idle
-- wifi: using native network-manager, wifitui or nmtui-go or impala 
-[(https://github.com/shazow/wifitui?tab=readme-ov-file) (https://github.com/doeixd/nmtui-go) (https://github.com/pythops/impala)]
-- lock screen: sway lock native package, but use custom circular shape Wallpaper complementary to the shape of the lock 
+- wifi: using native network-manager + nmtui-go (https://github.com/doeixd/nmtui-go)
 - bluetooth: bluetui (https://github.com/pythops/bluetui)
 - clipboard: clipse tui using wl-clipboard (https://github.com/savedra1/clipse)
 - bar: waybar (Add privacy markers 
@@ -19,7 +17,7 @@ Middle area: show application icon of what application is open/taskbar kinda
 
 Right area: notification panel, bluetooth module, sound module, clipboard module, wifi module, brightness module which if clicked should activate warm temperature using my script, battery, date and time)
 
-- OSD: for audio, brightness, temperature : dunst 
+- OSD: for audio, brightness, temperature : swayosd 
 - launcher: rofi (already configured) but another emoji picker is needed use this repo if useful for that https://github.com/vyrx-dev/dotfiles
 - notification: swaync, (make sure I get reminders, holidays, birthdays, system changes and script completion notifications), (make sure it has sliders to control blur settings within it using sliders, has dark mode/light mode toggle, has screen record button and screen shot button and stuff for per window or whole screen)
 - file manager: yazi, (make sure connecting external device such as my phone works(https://github.com/boydaihungst/gvfs.yazi?tab=readme-ov-file#preview), extracting files works properly, selecting what application to choose for opening any file works properly, be able to use my custom wallpaper applying script, and kde connect integration works properly, improve file opening for obscure files, like appimages, scripts, etc.)
@@ -119,11 +117,10 @@ Use these 2 links for zed settings to match with lazyvim keymaps
 - video player: mpv
 - screenshot tool: grim
 - terminal: kitty (make sure transparancy effects are utilized instead of lowering opacity throught the compositor for blur background, because it sacrifices text visibility)
-- screen recording tool: kooha
+- screen recording tool: obs
 - image viewer: feh
 - pdf viewer: Zathura
-- fonts : san francisco (apple font) for
-everything on browser, rofi and top bar, and Caskaydia cove for all terminal and text stuff like zed
+- font : Caskaydia cove
 - System monitor: btop
 - Misc: Obsidian, good VM manager, reddit(https://github.com/ck-zhang/reddix) and YouTube(https://github.com/Benexl/yt-x) clients in the terminal, calender tui(https://github.com/anufrievroman/calcure), voice to text using whisper (https://github.com/openai/whisper), screenshot to text or conversion using tesseract (https://github.com/tesseract-ocr/tesseract), maintain a document keeping track of all my keybinds, setup
 xdg-desktop-portal-wlr
