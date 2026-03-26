@@ -8,6 +8,7 @@
 - wifi: using native network-manager + nmtui-go (https://github.com/doeixd/nmtui-go)
 - bluetooth: bluetui (https://github.com/pythops/bluetui)
 - clipboard: clipse tui using wl-clipboard (https://github.com/savedra1/clipse)
+- gtk: control using nwg look, "sudo dnf copr enable solopasha/hyprland && sudo dnf install nwg-look"
 - bar: waybar (Add privacy markers 
 Showing if microphone is on, or camera is on or screen is being recorded, make every module clickable such that a tui open for the following module, it should have modules in the following order from left to right,
 
