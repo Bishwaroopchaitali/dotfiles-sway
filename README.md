@@ -20,7 +20,7 @@ Right area: notification panel, bluetooth module, sound module, clipboard module
 
 - OSD: for audio, brightness, temperature : swayosd 
 - launcher: rofi (already configured) but another emoji picker is needed use this repo if useful for that https://github.com/vyrx-dev/dotfiles
-- notification: swaync, (make sure I get reminders, holidays, birthdays, system changes and script completion notifications), (make sure it has sliders to control blur settings within it using sliders, has dark mode/light mode toggle, has screen record button and screen shot button and stuff for per window or whole screen)
+- notification: swaync, (make sure I get reminders, holidays, birthdays, system changes and script completion notifications), (make sure it has sliders to control blur settings within it using sliders, has dark mode/light mode toggle, has screen record button and screen shot button and stuff for per window or whole screen and also have caffeine feature which basically stop machine from sleeping)
 - file manager: yazi, (make sure connecting external device such as my phone works(https://github.com/boydaihungst/gvfs.yazi?tab=readme-ov-file#preview), extracting files works properly, selecting what application to choose for opening any file works properly, be able to use my custom wallpaper applying script, and kde connect integration works properly, improve file opening for obscure files, like appimages, scripts, etc.)
 
 and
