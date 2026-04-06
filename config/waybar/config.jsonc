@@ -97,8 +97,8 @@
     "backlight": {
         "format": "",
         "tooltip-format": "Screen-brightness: {percent}%\nLeft click to activate Night Light\nRight click to disable Night Light",
-        "on-click": "echo lol",
-        "on-click-right": "echo lol"
+        "on-click": "gammastep -O 3800K",
+        "on-click-right": "killall gammastep"
     },
 
     "battery": {
