@@ -2,7 +2,7 @@
 
 # Waybar
 exec waybar
-exec_always killall -SIGUSR2 waybar
+exec_always sleep 2 && killall -SIGUSR2 waybar
 
 # Clipboard
 exec clipse -listen
