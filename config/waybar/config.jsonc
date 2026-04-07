@@ -26,7 +26,8 @@
     ],
   
     // Modules configuration
-        "custom/power": {
+
+    "custom/power": {
         "format" : "󰐥",
 		    "tooltip": false,
 		    "on-click": "exec /home/$USER/.config/rofi/powermenu.sh"
