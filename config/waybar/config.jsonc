@@ -29,7 +29,7 @@
         "custom/power": {
         "format" : "󰐥",
 		    "tooltip": false,
-		    "on-click": "echo lol"
+		    "on-click": "exec /home/$USER/.config/rofi/powermenu.sh"
     },
   
     "sway/workspaces": {
