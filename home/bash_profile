@@ -7,5 +7,6 @@ export GTK_CSD=0
 if [ -z "$DISPLAY" ] && [ "$(tty)" = "/dev/tty1" ]; then
     export XDG_SESSION_TYPE=wayland
     export XDG_CURRENT_DESKTOP=sway
+    export DESKTOP_SESSION=sway
     exec sway
 fi
