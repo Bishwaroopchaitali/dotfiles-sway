@@ -141,3 +141,5 @@ Sharp black mouse with no tail
 Custom monochrome white and black icons for all applications I use
 
 - scripts: already the ones I made, update all appimages via appimageupdatetool (cli)
+
+## notes about gtk theme, when using a dark theme make sure to not only set it as theme, but also choose the "prefer dark" option such that stuff like browsers have panels in dark more
