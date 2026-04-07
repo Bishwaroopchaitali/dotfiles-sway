@@ -1,8 +1,7 @@
 ############################# Imp startup processes #############################
 
 # Waybar
-exec waybar
-exec_always sleep 2 && killall -SIGUSR2 waybar
+exec_always pkill -x waybar; waybar
 
 # Clipboard
 exec clipse -listen
