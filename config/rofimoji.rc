@@ -1,3 +1,2 @@
 max-recent = 0
-hidden-descriptions = true
-selector-args="-theme ~/.config/rofi/config-emoji.rasi"
+no-frecency = true
