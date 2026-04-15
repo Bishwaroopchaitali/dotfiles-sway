@@ -1,5 +1,10 @@
 [config]
 
+[config.wallpaper]
+set = true
+command = "swaybg -i {{image}}"
+pre_hook = "pkill swaybg"
+
 [templates.waybar]
 input_path = '~/.config/matugen/templates/waybar-colors.css'
 output_path = '~/.config/waybar/colors.css'
