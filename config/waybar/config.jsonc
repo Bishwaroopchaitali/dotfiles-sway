@@ -15,6 +15,7 @@
         "wlr/taskbar"
     ],
     "modules-right": [
+	      "privacy",
 	      "custom/clipboard",
 	      "bluetooth",
         "pulseaudio",
@@ -55,11 +56,27 @@
         "on-click": "activate"
     },
 
+    "privacy": {
+        "icon-spacing": 2,
+        "icon-size": 16,
+        "modules": [
+
+            {
+            "type": "screenshare"
+            },
+
+            {
+            "type": "audio-in"
+            }
+
+        ]
+    },
+
     "custom/clipboard": {
 	      "tooltip": false,
         "format": "{icon}",
         "format-icons": {
-            "default": ""
+            "default": "󰅌"
         },
         "on-click": "kitty clipse"
     },
@@ -81,13 +98,13 @@
         "tooltip-format": "System-volume: {volume}%\nSystem-mic: {format_source}",
         "format-muted": "",
         "format-icons": {
-            "default": ["", "", ""]
+            "default": ["󰕿", "󰖀", "󰕾"]
         },
         "on-click": "kitty wiremix"
     },
 
     "network": {
-        "format-wifi": "",
+        "format-wifi": "󰖩",
         "format-ethernet": "{ipaddr}/{cidr} ",
         "tooltip-format": "Connected-network: {essid}\nSignal-strength: {signalStrength}%",
         "on-click": "kitty ~/Applications/Tui/nmtui-go",
