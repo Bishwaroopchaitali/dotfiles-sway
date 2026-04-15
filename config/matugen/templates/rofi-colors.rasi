@@ -1,0 +1,5 @@
+* {
+    {{"bg"}}:             {{colors.background.default.rgba | set_alpha: 0.85}};
+    {{"fg"}}:             {{colors.primary.default.rgb}};
+    {{"fg-faded"}}:       {{colors.primary.default.rgba | set_alpha: 0.07}};
+}
