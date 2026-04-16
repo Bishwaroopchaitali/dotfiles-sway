@@ -4,7 +4,7 @@ prefer = "saturation"
 
 [config.wallpaper]
 set = true
-command = "swaybg -i {{image}}"
+command = "swaybg -i {{image}} && rm ~/Wallpapers/Active/* && cp '{{image}}' ~/Wallpapers/Active/current_wallpaper.png"
 pre_hook = "pkill swaybg"
 
 [templates.waybar]
