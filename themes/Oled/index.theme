@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=Oled
+Comment=Modified version of Colloid-gtk-theme
+Encoding=UTF-8
+
+[X-GNOME-Metatheme]
+GtkTheme=Oled
+IconTheme=yet-another-monochrome-icon-set
+CursorTheme=Win11OSX
+ButtonLayout=close,minimize,maximize:menu
