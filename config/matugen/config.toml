@@ -4,7 +4,7 @@ prefer = "saturation"
 
 [config.wallpaper]
 set = true
-command = "swaybg -i {{image}} fill"
+command = "swaybg -i {{image}} -m fill"
 pre_hook = "pkill swaybg"
 
 [templates.waybar]
