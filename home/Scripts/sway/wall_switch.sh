@@ -9,8 +9,11 @@ rm -f ~/Wallpapers/Active/*
 # this variable records the extension of the file provided
 extension="${source##*.}"
 
-# pause for 3 second just for safety
-sleep 3
+# pause for 2 second just for safety
+sleep 2
 
 # copies the file to "~/Wallpapers/Active/" and renames it current_wallpaper with its respective extension
-cp "$source" ~/Wallpapers/Active/current_wallpaper.$extension
+cp $source ~/Wallpapers/Active/current_wallpaper.$extension
+
+# matugen
+matugen image $source

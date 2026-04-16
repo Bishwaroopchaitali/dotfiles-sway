@@ -6,7 +6,7 @@ exec hash dbus-update-activation-environment 2>/dev/null && \
 dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP
 
 # Matugen
-exec matugen image ~/Wallpapers/Active/current_wallpaper.png
+exec matugen image ~/Wallpapers/Active/*
 
 # Waybar
 exec waybar
