@@ -78,7 +78,7 @@
         "format-icons": {
             "default": "󰅌"
         },
-        "on-click": "kitty clipse"
+        "on-click": "kitty --class clipse-popup clipse"
     },
 
     "bluetooth": {
@@ -90,7 +90,7 @@
         "tooltip-format-off": "Bluetooth status: inactive", 
         "tooltip-format-on": "Bluetooth status: active", 
         "tooltip-format-connected": "Bluetooth status: active\n\nConnected bluetooth devices:\n{device_alias} - status: {status}",
-        "on-click": "kitty bluetui"
+        "on-click": "kitty --class bluetui-popup bluetui"
     },
 
     "pulseaudio": {
@@ -100,14 +100,14 @@
         "format-icons": {
             "default": ["󰕿", "󰖀", "󰕾"]
         },
-        "on-click": "kitty wiremix"
+        "on-click": "kitty --class wiremix-popup wiremix"
     },
 
     "network": {
         "format-wifi": "󰖩",
         "format-ethernet": "{ipaddr}/{cidr} ",
         "tooltip-format": "Connected-network: {essid}\nSignal-strength: {signalStrength}%",
-        "on-click": "kitty ~/Applications/Tui/nmtui-go",
+        "on-click": "kitty --class nmtui-go-popup ~/Applications/Tui/nmtui-go",
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "󰖪"
     },
