@@ -1,5 +1,5 @@
 * {
-  {{"--bg-color"}}: {{colors.background.default.rgb}};
+  {{"--bg-color"}}: {{colors.background.default.rgba | set_alpha: 0.85}};
   {{"--fg-color"}}: {{colors.primary.default.rgb}};
 }
 
