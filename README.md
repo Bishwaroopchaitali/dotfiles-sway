@@ -139,6 +139,7 @@ gtk theme -> graphite dark https://github.com/vinceliuice/Graphite-gtk-theme (gu
 ___
 Sharp black mouse with no tail
 Custom monochrome white and black icons for all applications I use
+Use this awesome tool for achieving this https://github.com/Achno/gowall
 
 - scripts: already the ones I made, update all appimages via appimageupdatetool (cli)
 
