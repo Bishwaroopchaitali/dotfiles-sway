@@ -17,9 +17,6 @@ exec clipse -listen
 # On Screen display/indicator
 exec swayosd-server
 
-# Matugen
-exec matugen image ~/Wallpapers/Active/*
-
 #################################################################################
 
 include /etc/sway/config.d/*
