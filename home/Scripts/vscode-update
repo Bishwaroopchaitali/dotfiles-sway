@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
 
+#check if vscode is running
+if pgrep -x "code" >/dev/null; then
+  echo "VS Code is currently running. Please close it before updating."
+  exit 1
+fi
+
 #find user's package manager
 if command -v apt-get &>/dev/null; then
   echo "Distro detected: Debian based"
@@ -23,27 +29,29 @@ else
   echo "Error: No supported package manager found."
   exit 1
 fi
-#check if aria2 & 7z is installed
+#check if aria2 is installed
 if command -v aria2c &>/dev/null; then
-  aria2_is_installed="0"
+  pkg_is_installed="0"
 else
-  aria2_is_installed="1"
+  pkg_is_installed="1"
   echo "aria2 not installed, installing now."
 fi
-if command -v 7z &>/dev/null; then
-  zip_is_installed="0"
-else
-  zip_is_installed="1"
-  echo "7z not installed, installing now."
-fi
-# install packages incase its not installed
-if [ "$aria2_is_installed" -ne 0 ]; then
+# install package incase its not installed
+if [ "$pkg_is_installed" -ne 0 ]; then
   $INSTALL_CMD aria2
 fi
-if [ "$zip_is_installed" -ne 0 ]; then
-  $INSTALL_CMD 7zip || $INSTALL_CMD p7zip
-fi
 
+#installation directory
+install_dir="/home/$USER/Applications/Gui"
+mkdir -p "$install_dir" # Creates the path if it doesn't exist
 #installing vscode
-$install_dir=/home/$USER/Downloads
-aria2c -d "" -x 16 -s 16 -k 1M 'https://code.visualstudio.com/sha/download?build=stable&os=linux-x64'
+aria2c -d /tmp/ -o vscode-linux.tar.gz -x 16 -s 16 -k 1M 'https://code.visualstudio.com/sha/download?build=stable&os=linux-x64'
+#handle Backup (only if the VSCode folder exists)
+if [ -d "$install_dir/VSCode" ]; then
+  rm -rf "$install_dir/VSCodeBAK"
+  mv "$install_dir/VSCode" "$install_dir/VSCodeBAK"
+fi
+#move the extracted file to appropriate directory and clean up
+mkdir -p "$install_dir/VSCode"
+tar -xvf /tmp/vscode-linux.tar.gz -C "$install_dir/VSCode" --strip-components=1
+rm -f /tmp/vscode-linux.tar.gz
