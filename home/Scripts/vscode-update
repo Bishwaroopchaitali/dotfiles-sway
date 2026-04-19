@@ -13,7 +13,11 @@ if [ $? -eq 0 ]; then
   if [ "$local_ver" = "$remote_ver" ]; then
     echo "VS Code is already up to date ($local_ver). Skipping."
     exit 0
+  else
+    echo "Updating VSCode..."
   fi
+else
+  echo "VSCode not installed. Installing now."
 fi
 
 #installation directory
@@ -98,4 +102,4 @@ if [ $? -ne 0 ]; then
   exit 1
 fi
 rm -f /tmp/vscode-linux.tar.gz
-echo "Fetched the latest "$remote_ver" package successfully!"
+echo "Fetched the latest '$remote_ver' package successfully!"
