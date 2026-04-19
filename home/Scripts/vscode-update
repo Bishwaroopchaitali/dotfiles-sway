@@ -1,8 +1,12 @@
 #!/usr/bin/env bash
 
+#installation directory
+install_dir="$HOME/Applications/Gui"
+mkdir -p "$install_dir" # Creates the path if it doesn't exist
+
 #check if vscode is running
 if pgrep -x "code" >/dev/null; then
-  echo "VS Code is currently running. Please close it before updating."
+  echo "VS Code is currently running... Please close it before running this script."
   exit 1
 fi
 
@@ -36,22 +40,46 @@ else
   pkg_is_installed="1"
   echo "aria2 not installed, installing now."
 fi
-# install package incase its not installed
+# install arai2 incase its not installed
 if [ "$pkg_is_installed" -ne 0 ]; then
   $INSTALL_CMD aria2
+  if [ $? -ne 0 ]; then
+    echo "aria2 couldn't get installed try installing it manually and running the script again"
+    exit 1
+  fi
 fi
 
-#installation directory
-install_dir="/home/$USER/Applications/Gui"
-mkdir -p "$install_dir" # Creates the path if it doesn't exist
 #installing vscode
-aria2c -d /tmp/ -o vscode-linux.tar.gz -x 16 -s 16 -k 1M 'https://code.visualstudio.com/sha/download?build=stable&os=linux-x64'
+echo "Fetching latest VSCode package"
+aria2c -d /tmp/ -o vscode-linux.tar.gz -x 16 -s 16 -k 1M --allow-overwrite=true 'https://code.visualstudio.com/sha/download?build=stable&os=linux-x64'
+if [ $? -ne 0 ]; then
+  rm -f /tmp/vscode-linux.tar.gz
+  echo "Something went wrong... Failed to fetch package"
+  exit 1
+fi
 #handle Backup (only if the VSCode folder exists)
 if [ -d "$install_dir/VSCode" ]; then
+  bak="0"
   rm -rf "$install_dir/VSCodeBAK"
   mv "$install_dir/VSCode" "$install_dir/VSCodeBAK"
+else
+  bak="1"
 fi
 #move the extracted file to appropriate directory and clean up
 mkdir -p "$install_dir/VSCode"
 tar -xvf /tmp/vscode-linux.tar.gz -C "$install_dir/VSCode" --strip-components=1
+#handle extraction failiure
+if [ $? -ne 0 ]; then
+  if [ "$bak" -eq "0" ]; then
+    rm -rf "$install_dir/VSCode"
+    mv "$install_dir/VSCodeBAK" "$install_dir/VSCode"
+    rm -f "/tmp/vscode-linux.tar.gz"
+  else
+    rm -rf "$install_dir/VSCode"
+    rm -f "/tmp/vscode-linux.tar.gz"
+  fi
+  echo "Something went wrong... Failed to extract package"
+  exit 1
+fi
 rm -f /tmp/vscode-linux.tar.gz
+echo "Fetched Latest Package successfully!"
