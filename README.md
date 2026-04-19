@@ -96,7 +96,7 @@ _it should output your devices such as mouses keyboards etc, and keep blinking t
 
 ___
 
-_#make it permanent by executing it everytime on, startup and also, when your config is reloaded, add this to your sway config :_
+_#make it permanent by executing it everytime on startup, add this to your sway config :_
 
 ~/.config/sway/config :
 exec_always xremap ~/.config/xremap/config.yml
