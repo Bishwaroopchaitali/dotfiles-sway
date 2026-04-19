@@ -8,6 +8,9 @@ dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK XD
 # Polkit agent
 exec /usr/bin/lxpolkit
 
+# Xremap
+exec xremap /home/$USER/.config/xremap/config.yml
+
 # Waybar
 exec waybar
 
