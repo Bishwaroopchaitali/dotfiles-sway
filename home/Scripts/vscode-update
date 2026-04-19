@@ -1,5 +1,21 @@
 #!/usr/bin/env bash
 
+#source links
+vscode_latest_remote_ver_no_api_link="https://update.code.visualstudio.com/api/releases/stable"
+vscode_latest_remote_tarpkg_install_link="https://code.visualstudio.com/sha/download?build=stable&os=linux-x64"
+
+#checking if update necessary
+remote_ver=$(curl -s "$vscode_latest_remote_ver_no_api_link" | grep -oE '[0-9]+\.[0-9]+\.[0-9]+' | head -1)
+local_ver=$(code --version | head -n 1)
+if [ $? -eq 0 ]; then
+  echo "Local version:  $local_ver"
+  echo "Remote version: $remote_ver"
+  if [ "$local_ver" = "$remote_ver" ]; then
+    echo "VS Code is already up to date ($local_ver). Skipping."
+    exit 0
+  fi
+fi
+
 #installation directory
 install_dir="$HOME/Applications/Gui"
 mkdir -p "$install_dir" # Creates the path if it doesn't exist
@@ -51,7 +67,7 @@ fi
 
 #installing vscode
 echo "Fetching latest VSCode package"
-aria2c -d /tmp/ -o vscode-linux.tar.gz -x 16 -s 16 -k 1M --allow-overwrite=true 'https://code.visualstudio.com/sha/download?build=stable&os=linux-x64'
+aria2c -d /tmp/ -o vscode-linux.tar.gz -x 16 -s 16 -k 1M --allow-overwrite=true "$vscode_latest_remote_tarpkg_install_link"
 if [ $? -ne 0 ]; then
   rm -f /tmp/vscode-linux.tar.gz
   echo "Something went wrong... Failed to fetch package"
@@ -82,4 +98,4 @@ if [ $? -ne 0 ]; then
   exit 1
 fi
 rm -f /tmp/vscode-linux.tar.gz
-echo "Fetched Latest Package successfully!"
+echo "Fetched the latest "$remote_ver" package successfully!"
