@@ -1,14 +1,5 @@
 #!/usr/bin/env bash
 
-#check if aria2 is installed
-aria2c -v &>/dev/null
-if [ $? -eq 0 ]; then
-  is_installed="0"
-  echo "starting..."
-else
-  is_installed="1"
-  echo "aria2 not installed, installing now."
-fi
 #find user's package manager
 if command -v apt-get &>/dev/null; then
   echo "Distro detected: Debian based"
@@ -32,9 +23,27 @@ else
   echo "Error: No supported package manager found."
   exit 1
 fi
-# install package incase its not installed
-if [ "$is_installed" -ne 0 ]; then
+#check if aria2 & 7z is installed
+if command -v aria2c &>/dev/null; then
+  aria2_is_installed="0"
+else
+  aria2_is_installed="1"
+  echo "aria2 not installed, installing now."
+fi
+if command -v 7z &>/dev/null; then
+  zip_is_installed="0"
+else
+  zip_is_installed="1"
+  echo "7z not installed, installing now."
+fi
+# install packages incase its not installed
+if [ "$aria2_is_installed" -ne 0 ]; then
   $INSTALL_CMD aria2
 fi
+if [ "$zip_is_installed" -ne 0 ]; then
+  $INSTALL_CMD 7zip || $INSTALL_CMD p7zip
+fi
 
-aria2c -x 16 -s 16 -k 1M 'https://code.visualstudio.com/sha/download?build=stable&os=linux-x64'
+#installing vscode
+$install_dir=/home/$USER/Downloads
+aria2c -d "" -x 16 -s 16 -k 1M 'https://code.visualstudio.com/sha/download?build=stable&os=linux-x64'
