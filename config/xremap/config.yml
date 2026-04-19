@@ -1,6 +1,0 @@
-keymap:
-  - name: yazi
-    application:
-      only: kitty
-    remap:
-      SUPER-e: M-y
