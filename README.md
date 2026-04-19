@@ -99,7 +99,7 @@ ___
 _#make it permanent by executing it everytime on startup, add this to your sway config :_
 
 ~/.config/sway/config :
-exec_always xremap ~/.config/xremap/config.yml
+exec xremap ~/.config/xremap/config.yml
 
 ___
 
