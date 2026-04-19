@@ -13,11 +13,7 @@ if [ $? -eq 0 ]; then
   if [ "$local_ver" = "$remote_ver" ]; then
     echo "VS Code is already up to date ($local_ver). Skipping."
     exit 0
-  else
-    echo "Updating VSCode..."
   fi
-else
-  echo "VSCode not installed. Installing now."
 fi
 
 #installation directory
