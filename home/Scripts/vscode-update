@@ -1,30 +1,34 @@
 #!/usr/bin/env bash
 
 #source links
-vscode_latest_remote_ver_no_api_link="https://update.code.visualstudio.com/api/releases/stable"
+vscode_latest_remote_ver_num_api_link="https://update.code.visualstudio.com/api/releases/stable"
 vscode_latest_remote_tarpkg_install_link="https://code.visualstudio.com/sha/download?build=stable&os=linux-x64"
-
-#checking if update necessary
-remote_ver=$(curl -s "$vscode_latest_remote_ver_no_api_link" | grep -oE '[0-9]+\.[0-9]+\.[0-9]+' | head -1)
-local_ver=$(code --version | head -n 1)
-if [ $? -eq 0 ]; then
-  echo "Local version:  $local_ver"
-  echo "Remote version: $remote_ver"
-  if [ "$local_ver" = "$remote_ver" ]; then
-    echo "VS Code is already up to date ($local_ver). Skipping."
-    exit 0
-  fi
-fi
-
-#installation directory
-install_dir="$HOME/Applications/Gui"
-mkdir -p "$install_dir" # Creates the path if it doesn't exist
 
 #check if vscode is running
 if pgrep -x "code" >/dev/null; then
   echo "VS Code is currently running... Please close it before running this script."
   exit 1
 fi
+
+#checking if update necessary
+if command -v code &>/dev/null; then
+  remote_ver=$(curl -s "$vscode_latest_remote_ver_num_api_link" | grep -oE '[0-9]+\.[0-9]+\.[0-9]+' | head -1)
+  local_ver=$(code --version | head -n 1)
+  echo "Local version:  $local_ver"
+  echo "Remote version: $remote_ver"
+  if [ "$local_ver" = "$remote_ver" ]; then
+    echo "VS Code is already up to date ($local_ver). Skipping."
+    exit 0
+  else
+    echo "New version available... Starting update now."
+  fi
+else
+  echo "VSCode is not installed... Installing now."
+fi
+
+#installation directory
+install_dir="$HOME/Applications/Gui"
+mkdir -p "$install_dir" # Creates the path if it doesn't exist
 
 #find user's package manager
 if command -v apt-get &>/dev/null; then
