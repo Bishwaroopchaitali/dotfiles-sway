@@ -17,3 +17,7 @@ cp $source ~/Wallpapers/Active/current_wallpaper.$extension
 
 # matugen
 matugen image $source
+
+# sway
+swaymsg reload
+exit 0

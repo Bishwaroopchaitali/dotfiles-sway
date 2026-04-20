@@ -1,0 +1,4 @@
+[[mgr.prepend_keymap]]
+on   = "<A-s>"
+run  = 'shell "wall_switch.sh \"$1\"" --block'
+desc = "Run custom script on current file"
