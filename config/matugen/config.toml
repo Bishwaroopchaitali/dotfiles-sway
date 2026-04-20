@@ -1,6 +1,6 @@
 [config]
-mode = "dark"
 prefer = "saturation"
+type = "scheme-expressive"
 
 [templates.waybar]
 input_path = '~/.config/matugen/templates/waybar-colors.css'
@@ -24,7 +24,3 @@ post_hook = "pkill swayosd-server && swayosd-server &"
 [templates.yazi]
 input_path = '~/.config/matugen/templates/yazi-theme.toml'
 output_path = '~/.config/yazi/theme.toml'
-
-[templates.clipse]
-input_path = '~/.config/matugen/templates/clipse_custom_theme.json'
-output_path = '~/.config/clipse/custom_theme.json'
