@@ -16,7 +16,7 @@ sleep 2
 cp $source ~/Wallpapers/Active/current_wallpaper.$extension
 
 # matugen
-matugen image $source
+matugen image $source &>/dev/null
 
 # sway
 swaymsg reload
