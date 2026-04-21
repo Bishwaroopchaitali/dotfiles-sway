@@ -1,0 +1,2 @@
+@define-color fg rgb({color4.rgb});
+@define-color fg-faded rgba({color4.rgb}, 0.5);

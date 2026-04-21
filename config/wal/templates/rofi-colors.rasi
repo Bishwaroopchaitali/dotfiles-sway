@@ -1,0 +1,5 @@
+* {
+    bg:             rgba({color0.rgb}, 0.85);
+    fg:             rgb({color4.rgb});
+    fg-faded:       rgba({color4.rgb}, 0.07);
+}

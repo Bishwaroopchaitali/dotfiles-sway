@@ -1,0 +1,918 @@
+# : Manager [[[
+
+[mgr]
+cwd = { fg = "lightmagenta" }
+
+# Find
+find_keyword  = { fg = "lightgreen", bold = true, italic = true, underline = true }
+find_position = { fg = "lightcyan", bold = true, italic = true }
+
+# Marker
+marker_copied   = { fg = "lightyellow", bg = "lightyellow" }
+marker_cut      = { fg = "darkgray", bg = "darkgray" }
+marker_marked   = { fg = "lightmagenta", bg = "lightmagenta" }
+marker_selected = { fg = "lightgreen", bg = "lightgreen" }
+
+# Count
+count_copied   = { fg = "red", bg = "lightyellow" }
+count_cut      = { fg = "red", bg = "darkgray" }
+count_selected = { fg = "red", bg = "lightgreen" }
+
+# Border
+border_symbol = "│"
+border_style  = { fg = "yellow" }
+
+# : ]]]
+
+
+# : Indicator [[[
+
+[indicator]
+padding = { open = "█", close = "█" }
+
+# : ]]]
+
+
+# : Tabs [[[
+
+[tabs]
+active    = { fg = "dummie", bold = true, bg = "#000000" }
+inactive  = {}
+sep_inner = { open = "[", close = "]" }
+
+# : ]]]
+
+
+# : Mode [[[
+
+[mode]
+# Mode
+normal_main = { bg = "dummie", fg = "black", bold = true }
+
+# Select mode
+select_main = { bg = "darkgray", fg = "black", bold = true }
+
+# Unset mode
+unset_main = { bg = "darkgray", fg = "black", bold = true }
+
+# : ]]]
+
+
+# : Status [[[
+
+[status]
+sep_left  = { open = "🭁", close = "🭠" }
+sep_right = { open = "🭁", close = "🭠" }
+
+# Permissions
+perm_type  = { fg = "lightyellow" }
+perm_write = { fg = "lightgreen" }
+perm_read  = { fg = "darkgray" }
+perm_exec  = { fg = "lightmagenta" }
+perm_sep   = { fg = "red" }
+
+# Progress
+progress_label  = { bold = true }
+progress_normal = { fg = "dummie", bg = "black" }
+progress_error  = { fg = "darkgray", bg = "black" }
+
+# : ]]]
+
+
+# : Which [[[
+
+[which]
+cols = 3
+mask = { bg = "black" }
+cand = { fg = "lightblue" }
+rest = { fg = "green" }
+desc = { fg = "lightcyan" }
+separator = " ▶ "
+separator_style = { fg = "green" }
+
+# : ]]]
+
+
+# : Notify [[[
+
+[notify]
+title_info  = { fg = "lightyellow" }
+title_warn  = { fg = "dummie" }
+title_error = { fg = "darkgray" }
+
+# : ]]]
+
+
+# : Picker [[[
+
+[pick]
+border = { fg = "dummie" }
+active = { fg = "lightgreen", bold = true }
+inactive = {}
+
+# : ]]]
+
+
+# : Input [[[
+
+[input]
+border = { fg = "dummie" }
+value  = { fg = "lightcyan" }
+
+# : ]]]
+
+
+# : Completion [[[
+
+[cmp]
+border = { fg = "dummie", bg = "#000000" }
+
+# : ]]]
+
+
+# : Tasks [[[
+
+[tasks]
+border  = { fg = "dummie" }
+title   = {}
+hovered = { fg = "lightcyan", underline = true }
+
+# : ]]]
+
+
+# : Help [[[
+
+[help]
+on     = { fg = "lightmagenta" }
+run    = { fg = "lightcyan" }
+footer = { fg = "red", bg = "magenta" }
+
+# : ]]]
+
+
+# : File-specific styles [[[
+
+[filetype]
+
+rules = [
+    # Images
+    { mime = "image/*", fg = "#94e2d5" },
+
+    # Media
+    { mime = "{audio,video}/*", fg = "#f9e2af" },
+
+    # Archives
+    { mime = "application/{zip,rar,7z*,tar,gzip,xz,zstd,bzip*,lzma,compress,archive,cpio,arj,xar,ms-cab*}", fg = "#f5c2e7" },
+
+    # Documents
+    { mime = "application/{pdf,doc,rtf}", fg = "#a6e3a1" },
+
+    # Fallback
+    { url = "*", fg = "lightblue" },
+    { url = "*/", fg = "lightyellow" },
+]
+
+# : ]]]
+
+[icon]
+globs = []
+dirs  = [
+	{ name = ".config", text = "", fg = "dummie" },
+	{ name = ".git", text = "", fg = "dummie" },
+	{ name = ".github", text = "", fg = "dummie" },
+	{ name = ".npm", text = "", fg = "dummie" },
+	{ name = "Desktop", text = "", fg = "dummie" },
+	{ name = "Applications", text = "", fg = "dummie" },
+	{ name = "Scripts", text = "󰯃", fg = "dummie" },
+	{ name = "Wallpapers", text = "", fg = "dummie" },
+	{ name = "Playground", text = "", fg = "dummie" },
+	{ name = "Development", text = "", fg = "dummie" },
+	{ name = "Documents", text = "", fg = "dummie" },
+	{ name = "Downloads", text = "", fg = "dummie" },
+	{ name = "Library", text = "", fg = "dummie" },
+	{ name = "Movies", text = "", fg = "dummie" },
+	{ name = "Music", text = "", fg = "dummie" },
+	{ name = "Pictures", text = "", fg = "dummie" },
+	{ name = "Public", text = "", fg = "dummie" },
+	{ name = "Videos", text = "", fg = "dummie" },
+]
+files = [
+	{ name = ".babelrc", text = "", fg = "dummie" },
+	{ name = ".bash_profile", text = "", fg = "dummie" },
+	{ name = ".bashrc", text = "", fg = "dummie" },
+	{ name = ".clang-format", text = "", fg = "dummie" },
+	{ name = ".clang-tidy", text = "", fg = "dummie" },
+	{ name = ".codespellrc", text = "󰓆", fg = "dummie" },
+	{ name = ".condarc", text = "", fg = "dummie" },
+	{ name = ".dockerignore", text = "󰡨", fg = "dummie" },
+	{ name = ".ds_store", text = "", fg = "dummie" },
+	{ name = ".editorconfig", text = "", fg = "dummie" },
+	{ name = ".env", text = "", fg = "dummie" },
+	{ name = ".eslintignore", text = "", fg = "dummie" },
+	{ name = ".eslintrc", text = "", fg = "dummie" },
+	{ name = ".git-blame-ignore-revs", text = "", fg = "dummie" },
+	{ name = ".gitattributes", text = "", fg = "dummie" },
+	{ name = ".gitconfig", text = "", fg = "dummie" },
+	{ name = ".gitignore", text = "", fg = "dummie" },
+	{ name = ".gitlab-ci.yml", text = "", fg = "dummie" },
+	{ name = ".gitmodules", text = "", fg = "dummie" },
+	{ name = ".gtkrc-2.0", text = "", fg = "dummie" },
+	{ name = ".gvimrc", text = "", fg = "dummie" },
+	{ name = ".justfile", text = "", fg = "dummie" },
+	{ name = ".luacheckrc", text = "", fg = "dummie" },
+	{ name = ".luaurc", text = "", fg = "dummie" },
+	{ name = ".mailmap", text = "󰊢", fg = "dummie" },
+	{ name = ".nanorc", text = "", fg = "dummie" },
+	{ name = ".npmignore", text = "", fg = "dummie" },
+	{ name = ".npmrc", text = "", fg = "dummie" },
+	{ name = ".nuxtrc", text = "󱄆", fg = "dummie" },
+	{ name = ".nvmrc", text = "", fg = "dummie" },
+	{ name = ".pnpmfile.cjs", text = "", fg = "dummie" },
+	{ name = ".pre-commit-config.yaml", text = "󰛢", fg = "dummie" },
+	{ name = ".prettierignore", text = "", fg = "dummie" },
+	{ name = ".prettierrc", text = "", fg = "dummie" },
+	{ name = ".prettierrc.cjs", text = "", fg = "dummie" },
+	{ name = ".prettierrc.js", text = "", fg = "dummie" },
+	{ name = ".prettierrc.json", text = "", fg = "dummie" },
+	{ name = ".prettierrc.json5", text = "", fg = "dummie" },
+	{ name = ".prettierrc.mjs", text = "", fg = "dummie" },
+	{ name = ".prettierrc.toml", text = "", fg = "dummie" },
+	{ name = ".prettierrc.yaml", text = "", fg = "dummie" },
+	{ name = ".prettierrc.yml", text = "", fg = "dummie" },
+	{ name = ".pylintrc", text = "", fg = "dummie" },
+	{ name = ".settings.json", text = "", fg = "dummie" },
+	{ name = ".SRCINFO", text = "󰣇", fg = "dummie" },
+	{ name = ".vimrc", text = "", fg = "dummie" },
+	{ name = ".Xauthority", text = "", fg = "dummie" },
+	{ name = ".xinitrc", text = "", fg = "dummie" },
+	{ name = ".Xresources", text = "", fg = "dummie" },
+	{ name = ".xsession", text = "", fg = "dummie" },
+	{ name = ".zprofile", text = "", fg = "dummie" },
+	{ name = ".zshenv", text = "", fg = "dummie" },
+	{ name = ".zshrc", text = "", fg = "dummie" },
+	{ name = "_gvimrc", text = "", fg = "dummie" },
+	{ name = "_vimrc", text = "", fg = "dummie" },
+	{ name = "AUTHORS", text = "", fg = "dummie" },
+	{ name = "AUTHORS.txt", text = "", fg = "dummie" },
+	{ name = "brewfile", text = "", fg = "dummie" },
+	{ name = "bspwmrc", text = "", fg = "dummie" },
+	{ name = "build", text = "", fg = "dummie" },
+	{ name = "build.gradle", text = "", fg = "dummie" },
+	{ name = "build.zig.zon", text = "", fg = "dummie" },
+	{ name = "bun.lock", text = "", fg = "dummie" },
+	{ name = "bun.lockb", text = "", fg = "dummie" },
+	{ name = "cantorrc", text = "", fg = "dummie" },
+	{ name = "checkhealth", text = "󰓙", fg = "dummie" },
+	{ name = "cmakelists.txt", text = "", fg = "dummie" },
+	{ name = "code_of_conduct", text = "", fg = "dummie" },
+	{ name = "code_of_conduct.md", text = "", fg = "dummie" },
+	{ name = "commit_editmsg", text = "", fg = "dummie" },
+	{ name = "commitlint.config.js", text = "󰜘", fg = "dummie" },
+	{ name = "commitlint.config.ts", text = "󰜘", fg = "dummie" },
+	{ name = "compose.yaml", text = "󰡨", fg = "dummie" },
+	{ name = "compose.yml", text = "󰡨", fg = "dummie" },
+	{ name = "config", text = "", fg = "dummie" },
+	{ name = "containerfile", text = "󰡨", fg = "dummie" },
+	{ name = "copying", text = "", fg = "dummie" },
+	{ name = "copying.lesser", text = "", fg = "dummie" },
+	{ name = "Directory.Build.props", text = "", fg = "dummie" },
+	{ name = "Directory.Build.targets", text = "", fg = "dummie" },
+	{ name = "Directory.Packages.props", text = "", fg = "dummie" },
+	{ name = "docker-compose.yaml", text = "󰡨", fg = "dummie" },
+	{ name = "docker-compose.yml", text = "󰡨", fg = "dummie" },
+	{ name = "dockerfile", text = "󰡨", fg = "dummie" },
+	{ name = "eslint.config.cjs", text = "", fg = "dummie" },
+	{ name = "eslint.config.js", text = "", fg = "dummie" },
+	{ name = "eslint.config.mjs", text = "", fg = "dummie" },
+	{ name = "eslint.config.ts", text = "", fg = "dummie" },
+	{ name = "ext_typoscript_setup.txt", text = "", fg = "dummie" },
+	{ name = "favicon.ico", text = "", fg = "dummie" },
+	{ name = "fp-info-cache", text = "", fg = "dummie" },
+	{ name = "fp-lib-table", text = "", fg = "dummie" },
+	{ name = "FreeCAD.conf", text = "", fg = "dummie" },
+	{ name = "Gemfile", text = "", fg = "dummie" },
+	{ name = "gnumakefile", text = "", fg = "dummie" },
+	{ name = "go.mod", text = "", fg = "dummie" },
+	{ name = "go.sum", text = "", fg = "dummie" },
+	{ name = "go.work", text = "", fg = "dummie" },
+	{ name = "gradle-wrapper.properties", text = "", fg = "dummie" },
+	{ name = "gradle.properties", text = "", fg = "dummie" },
+	{ name = "gradlew", text = "", fg = "dummie" },
+	{ name = "groovy", text = "", fg = "dummie" },
+	{ name = "gruntfile.babel.js", text = "", fg = "dummie" },
+	{ name = "gruntfile.coffee", text = "", fg = "dummie" },
+	{ name = "gruntfile.js", text = "", fg = "dummie" },
+	{ name = "gruntfile.ts", text = "", fg = "dummie" },
+	{ name = "gtkrc", text = "", fg = "dummie" },
+	{ name = "gulpfile.babel.js", text = "", fg = "dummie" },
+	{ name = "gulpfile.coffee", text = "", fg = "dummie" },
+	{ name = "gulpfile.js", text = "", fg = "dummie" },
+	{ name = "gulpfile.ts", text = "", fg = "dummie" },
+	{ name = "hypridle.conf", text = "", fg = "dummie" },
+	{ name = "hyprland.conf", text = "", fg = "dummie" },
+	{ name = "hyprlandd.conf", text = "", fg = "dummie" },
+	{ name = "hyprlock.conf", text = "", fg = "dummie" },
+	{ name = "hyprpaper.conf", text = "", fg = "dummie" },
+	{ name = "hyprsunset.conf", text = "", fg = "dummie" },
+	{ name = "i18n.config.js", text = "󰗊", fg = "dummie" },
+	{ name = "i18n.config.ts", text = "󰗊", fg = "dummie" },
+	{ name = "i3blocks.conf", text = "", fg = "dummie" },
+	{ name = "i3status.conf", text = "", fg = "dummie" },
+	{ name = "index.theme", text = "", fg = "dummie" },
+	{ name = "ionic.config.json", text = "", fg = "dummie" },
+	{ name = "Jenkinsfile", text = "", fg = "dummie" },
+	{ name = "justfile", text = "", fg = "dummie" },
+	{ name = "kalgebrarc", text = "", fg = "dummie" },
+	{ name = "kdeglobals", text = "", fg = "dummie" },
+	{ name = "kdenlive-layoutsrc", text = "", fg = "dummie" },
+	{ name = "kdenliverc", text = "", fg = "dummie" },
+	{ name = "kritadisplayrc", text = "", fg = "dummie" },
+	{ name = "kritarc", text = "", fg = "dummie" },
+	{ name = "license", text = "", fg = "dummie" },
+	{ name = "license.md", text = "", fg = "dummie" },
+	{ name = "lxde-rc.xml", text = "", fg = "dummie" },
+	{ name = "lxqt.conf", text = "", fg = "dummie" },
+	{ name = "makefile", text = "", fg = "dummie" },
+	{ name = "mix.lock", text = "", fg = "dummie" },
+	{ name = "mpv.conf", text = "", fg = "dummie" },
+	{ name = "next.config.cjs", text = "", fg = "dummie" },
+	{ name = "next.config.js", text = "", fg = "dummie" },
+	{ name = "next.config.ts", text = "", fg = "dummie" },
+	{ name = "node_modules", text = "", fg = "dummie" },
+	{ name = "nuxt.config.cjs", text = "󱄆", fg = "dummie" },
+	{ name = "nuxt.config.js", text = "󱄆", fg = "dummie" },
+	{ name = "nuxt.config.mjs", text = "󱄆", fg = "dummie" },
+	{ name = "nuxt.config.ts", text = "󱄆", fg = "dummie" },
+	{ name = "package-lock.json", text = "", fg = "dummie" },
+	{ name = "package.json", text = "", fg = "dummie" },
+	{ name = "PKGBUILD", text = "", fg = "dummie" },
+	{ name = "platformio.ini", text = "", fg = "dummie" },
+	{ name = "playwright.config.cjs", text = "", fg = "dummie" },
+	{ name = "playwright.config.cts", text = "", fg = "dummie" },
+	{ name = "playwright.config.js", text = "", fg = "dummie" },
+	{ name = "playwright.config.mjs", text = "", fg = "dummie" },
+	{ name = "playwright.config.mts", text = "", fg = "dummie" },
+	{ name = "playwright.config.ts", text = "", fg = "dummie" },
+	{ name = "pnpm-lock.yaml", text = "", fg = "dummie" },
+	{ name = "pnpm-workspace.yaml", text = "", fg = "dummie" },
+	{ name = "pom.xml", text = "", fg = "dummie" },
+	{ name = "prettier.config.cjs", text = "", fg = "dummie" },
+	{ name = "prettier.config.js", text = "", fg = "dummie" },
+	{ name = "prettier.config.mjs", text = "", fg = "dummie" },
+	{ name = "prettier.config.ts", text = "", fg = "dummie" },
+	{ name = "prisma.config.mts", text = "", fg = "dummie" },
+	{ name = "prisma.config.ts", text = "", fg = "dummie" },
+	{ name = "procfile", text = "", fg = "dummie" },
+	{ name = "PrusaSlicer.ini", text = "", fg = "dummie" },
+	{ name = "PrusaSlicerGcodeViewer.ini", text = "", fg = "dummie" },
+	{ name = "py.typed", text = "", fg = "dummie" },
+	{ name = "QtProject.conf", text = "", fg = "dummie" },
+	{ name = "rakefile", text = "", fg = "dummie" },
+	{ name = "readme", text = "󰂺", fg = "dummie" },
+	{ name = "readme.md", text = "󰂺", fg = "dummie" },
+	{ name = "rmd", text = "", fg = "dummie" },
+	{ name = "robots.txt", text = "󰚩", fg = "dummie" },
+	{ name = "security", text = "󰒃", fg = "dummie" },
+	{ name = "security.md", text = "󰒃", fg = "dummie" },
+	{ name = "settings.gradle", text = "", fg = "dummie" },
+	{ name = "svelte.config.js", text = "", fg = "dummie" },
+	{ name = "sxhkdrc", text = "", fg = "dummie" },
+	{ name = "sym-lib-table", text = "", fg = "dummie" },
+	{ name = "tailwind.config.js", text = "󱏿", fg = "dummie" },
+	{ name = "tailwind.config.mjs", text = "󱏿", fg = "dummie" },
+	{ name = "tailwind.config.ts", text = "󱏿", fg = "dummie" },
+	{ name = "tmux.conf", text = "", fg = "dummie" },
+	{ name = "tmux.conf.local", text = "", fg = "dummie" },
+	{ name = "tsconfig.json", text = "", fg = "dummie" },
+	{ name = "unlicense", text = "", fg = "dummie" },
+	{ name = "vagrantfile", text = "", fg = "dummie" },
+	{ name = "vercel.json", text = "", fg = "dummie" },
+	{ name = "vite.config.cjs", text = "", fg = "dummie" },
+	{ name = "vite.config.cts", text = "", fg = "dummie" },
+	{ name = "vite.config.js", text = "", fg = "dummie" },
+	{ name = "vite.config.mjs", text = "", fg = "dummie" },
+	{ name = "vite.config.mts", text = "", fg = "dummie" },
+	{ name = "vite.config.ts", text = "", fg = "dummie" },
+	{ name = "vitest.config.cjs", text = "", fg = "dummie" },
+	{ name = "vitest.config.cts", text = "", fg = "dummie" },
+	{ name = "vitest.config.js", text = "", fg = "dummie" },
+	{ name = "vitest.config.mjs", text = "", fg = "dummie" },
+	{ name = "vitest.config.mts", text = "", fg = "dummie" },
+	{ name = "vitest.config.ts", text = "", fg = "dummie" },
+	{ name = "vlcrc", text = "󰕼", fg = "dummie" },
+	{ name = "webpack", text = "󰜫", fg = "dummie" },
+	{ name = "weston.ini", text = "", fg = "dummie" },
+	{ name = "workspace", text = "", fg = "dummie" },
+	{ name = "wrangler.jsonc", text = "", fg = "dummie" },
+	{ name = "wrangler.toml", text = "", fg = "dummie" },
+	{ name = "xdph.conf", text = "", fg = "dummie" },
+	{ name = "xmobarrc", text = "", fg = "dummie" },
+	{ name = "xmobarrc.hs", text = "", fg = "dummie" },
+	{ name = "xmonad.hs", text = "", fg = "dummie" },
+	{ name = "xorg.conf", text = "", fg = "dummie" },
+	{ name = "xsettingsd.conf", text = "", fg = "dummie" },
+]
+exts = [
+	{ name = "3gp", text = "", fg = "dummie" },
+	{ name = "3mf", text = "󰆧", fg = "dummie" },
+	{ name = "7z", text = "", fg = "dummie" },
+	{ name = "a", text = "", fg = "dummie" },
+	{ name = "aac", text = "", fg = "dummie" },
+	{ name = "ada", text = "", fg = "dummie" },
+	{ name = "adb", text = "", fg = "dummie" },
+	{ name = "ads", text = "", fg = "dummie" },
+	{ name = "ai", text = "", fg = "dummie" },
+	{ name = "aif", text = "", fg = "dummie" },
+	{ name = "aiff", text = "", fg = "dummie" },
+	{ name = "android", text = "", fg = "dummie" },
+	{ name = "ape", text = "", fg = "dummie" },
+	{ name = "apk", text = "", fg = "dummie" },
+	{ name = "apl", text = "", fg = "dummie" },
+	{ name = "app", text = "", fg = "dummie" },
+	{ name = "applescript", text = "", fg = "dummie" },
+	{ name = "asc", text = "󰦝", fg = "dummie" },
+	{ name = "asm", text = "", fg = "dummie" },
+	{ name = "ass", text = "󰨖", fg = "dummie" },
+	{ name = "astro", text = "", fg = "dummie" },
+	{ name = "avif", text = "", fg = "dummie" },
+	{ name = "awk", text = "", fg = "dummie" },
+	{ name = "azcli", text = "", fg = "dummie" },
+	{ name = "bak", text = "󰁯", fg = "dummie" },
+	{ name = "bash", text = "", fg = "dummie" },
+	{ name = "bat", text = "", fg = "dummie" },
+	{ name = "bazel", text = "", fg = "dummie" },
+	{ name = "bib", text = "󱉟", fg = "dummie" },
+	{ name = "bicep", text = "", fg = "dummie" },
+	{ name = "bicepparam", text = "", fg = "dummie" },
+	{ name = "bin", text = "", fg = "dummie" },
+	{ name = "blade.php", text = "", fg = "dummie" },
+	{ name = "blend", text = "󰂫", fg = "dummie" },
+	{ name = "blp", text = "󰺾", fg = "dummie" },
+	{ name = "bmp", text = "", fg = "dummie" },
+	{ name = "bqn", text = "", fg = "dummie" },
+	{ name = "brep", text = "󰻫", fg = "dummie" },
+	{ name = "bz", text = "", fg = "dummie" },
+	{ name = "bz2", text = "", fg = "dummie" },
+	{ name = "bz3", text = "", fg = "dummie" },
+	{ name = "bzl", text = "", fg = "dummie" },
+	{ name = "c", text = "", fg = "dummie" },
+	{ name = "c++", text = "", fg = "dummie" },
+	{ name = "cache", text = "", fg = "dummie" },
+	{ name = "cast", text = "", fg = "dummie" },
+	{ name = "cbl", text = "", fg = "dummie" },
+	{ name = "cc", text = "", fg = "dummie" },
+	{ name = "ccm", text = "", fg = "dummie" },
+	{ name = "cfc", text = "", fg = "dummie" },
+	{ name = "cfg", text = "", fg = "dummie" },
+	{ name = "cfm", text = "", fg = "dummie" },
+	{ name = "cjs", text = "", fg = "dummie" },
+	{ name = "clj", text = "", fg = "dummie" },
+	{ name = "cljc", text = "", fg = "dummie" },
+	{ name = "cljd", text = "", fg = "dummie" },
+	{ name = "cljs", text = "", fg = "dummie" },
+	{ name = "cmake", text = "", fg = "dummie" },
+	{ name = "cob", text = "", fg = "dummie" },
+	{ name = "cobol", text = "", fg = "dummie" },
+	{ name = "coffee", text = "", fg = "dummie" },
+	{ name = "conda", text = "", fg = "dummie" },
+	{ name = "conf", text = "", fg = "dummie" },
+	{ name = "config.ru", text = "", fg = "dummie" },
+	{ name = "cow", text = "󰆚", fg = "dummie" },
+	{ name = "cp", text = "", fg = "dummie" },
+	{ name = "cpp", text = "", fg = "dummie" },
+	{ name = "cppm", text = "", fg = "dummie" },
+	{ name = "cpy", text = "", fg = "dummie" },
+	{ name = "cr", text = "", fg = "dummie" },
+	{ name = "crdownload", text = "", fg = "dummie" },
+	{ name = "cs", text = "󰌛", fg = "dummie" },
+	{ name = "csh", text = "", fg = "dummie" },
+	{ name = "cshtml", text = "󱦗", fg = "dummie" },
+	{ name = "cson", text = "", fg = "dummie" },
+	{ name = "csproj", text = "󰪮", fg = "dummie" },
+	{ name = "css", text = "", fg = "dummie" },
+	{ name = "csv", text = "", fg = "dummie" },
+	{ name = "cts", text = "", fg = "dummie" },
+	{ name = "cu", text = "", fg = "dummie" },
+	{ name = "cue", text = "󰲹", fg = "dummie" },
+	{ name = "cuh", text = "", fg = "dummie" },
+	{ name = "cxx", text = "", fg = "dummie" },
+	{ name = "cxxm", text = "", fg = "dummie" },
+	{ name = "d", text = "", fg = "dummie" },
+	{ name = "d.ts", text = "", fg = "dummie" },
+	{ name = "dart", text = "", fg = "dummie" },
+	{ name = "db", text = "", fg = "dummie" },
+	{ name = "dconf", text = "", fg = "dummie" },
+	{ name = "desktop", text = "", fg = "dummie" },
+	{ name = "diff", text = "", fg = "dummie" },
+	{ name = "dll", text = "", fg = "dummie" },
+	{ name = "doc", text = "󰈬", fg = "dummie" },
+	{ name = "Dockerfile", text = "󰡨", fg = "dummie" },
+	{ name = "dockerignore", text = "󰡨", fg = "dummie" },
+	{ name = "docx", text = "󰈬", fg = "dummie" },
+	{ name = "dot", text = "󱁉", fg = "dummie" },
+	{ name = "download", text = "", fg = "dummie" },
+	{ name = "drl", text = "", fg = "dummie" },
+	{ name = "dropbox", text = "", fg = "dummie" },
+	{ name = "dump", text = "", fg = "dummie" },
+	{ name = "dwg", text = "󰻫", fg = "dummie" },
+	{ name = "dxf", text = "󰻫", fg = "dummie" },
+	{ name = "ebook", text = "", fg = "dummie" },
+	{ name = "ebuild", text = "", fg = "dummie" },
+	{ name = "edn", text = "", fg = "dummie" },
+	{ name = "eex", text = "", fg = "dummie" },
+	{ name = "ejs", text = "", fg = "dummie" },
+	{ name = "el", text = "", fg = "dummie" },
+	{ name = "elc", text = "", fg = "dummie" },
+	{ name = "elf", text = "", fg = "dummie" },
+	{ name = "elm", text = "", fg = "dummie" },
+	{ name = "eln", text = "", fg = "dummie" },
+	{ name = "env", text = "", fg = "dummie" },
+	{ name = "eot", text = "", fg = "dummie" },
+	{ name = "epp", text = "", fg = "dummie" },
+	{ name = "epub", text = "", fg = "dummie" },
+	{ name = "erb", text = "", fg = "dummie" },
+	{ name = "erl", text = "", fg = "dummie" },
+	{ name = "ex", text = "", fg = "dummie" },
+	{ name = "exe", text = "", fg = "dummie" },
+	{ name = "exs", text = "", fg = "dummie" },
+	{ name = "f#", text = "", fg = "dummie" },
+	{ name = "f3d", text = "󰻫", fg = "dummie" },
+	{ name = "f90", text = "󱈚", fg = "dummie" },
+	{ name = "fbx", text = "󰆧", fg = "dummie" },
+	{ name = "fcbak", text = "", fg = "dummie" },
+	{ name = "fcmacro", text = "", fg = "dummie" },
+	{ name = "fcmat", text = "", fg = "dummie" },
+	{ name = "fcparam", text = "", fg = "dummie" },
+	{ name = "fcscript", text = "", fg = "dummie" },
+	{ name = "fcstd", text = "", fg = "dummie" },
+	{ name = "fcstd1", text = "", fg = "dummie" },
+	{ name = "fctb", text = "", fg = "dummie" },
+	{ name = "fctl", text = "", fg = "dummie" },
+	{ name = "fdmdownload", text = "", fg = "dummie" },
+	{ name = "feature", text = "", fg = "dummie" },
+	{ name = "fish", text = "", fg = "dummie" },
+	{ name = "flac", text = "", fg = "dummie" },
+	{ name = "flc", text = "", fg = "dummie" },
+	{ name = "flf", text = "", fg = "dummie" },
+	{ name = "fnl", text = "", fg = "dummie" },
+	{ name = "fodg", text = "", fg = "dummie" },
+	{ name = "fodp", text = "", fg = "dummie" },
+	{ name = "fods", text = "", fg = "dummie" },
+	{ name = "fodt", text = "", fg = "dummie" },
+	{ name = "frag", text = "", fg = "dummie" },
+	{ name = "fs", text = "", fg = "dummie" },
+	{ name = "fsi", text = "", fg = "dummie" },
+	{ name = "fsscript", text = "", fg = "dummie" },
+	{ name = "fsx", text = "", fg = "dummie" },
+	{ name = "gcode", text = "󰐫", fg = "dummie" },
+	{ name = "gd", text = "", fg = "dummie" },
+	{ name = "gemspec", text = "", fg = "dummie" },
+	{ name = "geom", text = "", fg = "dummie" },
+	{ name = "gif", text = "", fg = "dummie" },
+	{ name = "git", text = "", fg = "dummie" },
+	{ name = "glb", text = "", fg = "dummie" },
+	{ name = "gleam", text = "", fg = "dummie" },
+	{ name = "glsl", text = "", fg = "dummie" },
+	{ name = "gnumakefile", text = "", fg = "dummie" },
+	{ name = "go", text = "", fg = "dummie" },
+	{ name = "godot", text = "", fg = "dummie" },
+	{ name = "gpr", text = "", fg = "dummie" },
+	{ name = "gql", text = "", fg = "dummie" },
+	{ name = "gradle", text = "", fg = "dummie" },
+	{ name = "graphql", text = "", fg = "dummie" },
+	{ name = "gresource", text = "", fg = "dummie" },
+	{ name = "gv", text = "󱁉", fg = "dummie" },
+	{ name = "gz", text = "", fg = "dummie" },
+	{ name = "h", text = "", fg = "dummie" },
+	{ name = "haml", text = "", fg = "dummie" },
+	{ name = "hbs", text = "", fg = "dummie" },
+	{ name = "heex", text = "", fg = "dummie" },
+	{ name = "hex", text = "", fg = "dummie" },
+	{ name = "hh", text = "", fg = "dummie" },
+	{ name = "hpp", text = "", fg = "dummie" },
+	{ name = "hrl", text = "", fg = "dummie" },
+	{ name = "hs", text = "", fg = "dummie" },
+	{ name = "htm", text = "", fg = "dummie" },
+	{ name = "html", text = "", fg = "dummie" },
+	{ name = "http", text = "", fg = "dummie" },
+	{ name = "huff", text = "󰡘", fg = "dummie" },
+	{ name = "hurl", text = "", fg = "dummie" },
+	{ name = "hx", text = "", fg = "dummie" },
+	{ name = "hxx", text = "", fg = "dummie" },
+	{ name = "ical", text = "", fg = "dummie" },
+	{ name = "icalendar", text = "", fg = "dummie" },
+	{ name = "ico", text = "", fg = "dummie" },
+	{ name = "ics", text = "", fg = "dummie" },
+	{ name = "ifb", text = "", fg = "dummie" },
+	{ name = "ifc", text = "󰻫", fg = "dummie" },
+	{ name = "ige", text = "󰻫", fg = "dummie" },
+	{ name = "iges", text = "󰻫", fg = "dummie" },
+	{ name = "igs", text = "󰻫", fg = "dummie" },
+	{ name = "image", text = "", fg = "dummie" },
+	{ name = "img", text = "", fg = "dummie" },
+	{ name = "import", text = "", fg = "dummie" },
+	{ name = "info", text = "", fg = "dummie" },
+	{ name = "ini", text = "", fg = "dummie" },
+	{ name = "ino", text = "", fg = "dummie" },
+	{ name = "ipynb", text = "", fg = "dummie" },
+	{ name = "iso", text = "", fg = "dummie" },
+	{ name = "ixx", text = "", fg = "dummie" },
+	{ name = "jar", text = "", fg = "dummie" },
+	{ name = "java", text = "", fg = "dummie" },
+	{ name = "jl", text = "", fg = "dummie" },
+	{ name = "jpeg", text = "", fg = "dummie" },
+	{ name = "jpg", text = "", fg = "dummie" },
+	{ name = "js", text = "", fg = "dummie" },
+	{ name = "json", text = "", fg = "dummie" },
+	{ name = "json5", text = "", fg = "dummie" },
+	{ name = "jsonc", text = "", fg = "dummie" },
+	{ name = "jsx", text = "", fg = "dummie" },
+	{ name = "jwmrc", text = "", fg = "dummie" },
+	{ name = "jxl", text = "", fg = "dummie" },
+	{ name = "kbx", text = "󰯄", fg = "dummie" },
+	{ name = "kdb", text = "", fg = "dummie" },
+	{ name = "kdbx", text = "", fg = "dummie" },
+	{ name = "kdenlive", text = "", fg = "dummie" },
+	{ name = "kdenlivetitle", text = "", fg = "dummie" },
+	{ name = "kicad_dru", text = "", fg = "dummie" },
+	{ name = "kicad_mod", text = "", fg = "dummie" },
+	{ name = "kicad_pcb", text = "", fg = "dummie" },
+	{ name = "kicad_prl", text = "", fg = "dummie" },
+	{ name = "kicad_pro", text = "", fg = "dummie" },
+	{ name = "kicad_sch", text = "", fg = "dummie" },
+	{ name = "kicad_sym", text = "", fg = "dummie" },
+	{ name = "kicad_wks", text = "", fg = "dummie" },
+	{ name = "ko", text = "", fg = "dummie" },
+	{ name = "kpp", text = "", fg = "dummie" },
+	{ name = "kra", text = "", fg = "dummie" },
+	{ name = "krz", text = "", fg = "dummie" },
+	{ name = "ksh", text = "", fg = "dummie" },
+	{ name = "kt", text = "", fg = "dummie" },
+	{ name = "kts", text = "", fg = "dummie" },
+	{ name = "lck", text = "", fg = "dummie" },
+	{ name = "leex", text = "", fg = "dummie" },
+	{ name = "less", text = "", fg = "dummie" },
+	{ name = "lff", text = "", fg = "dummie" },
+	{ name = "lhs", text = "", fg = "dummie" },
+	{ name = "lib", text = "", fg = "dummie" },
+	{ name = "license", text = "", fg = "dummie" },
+	{ name = "liquid", text = "", fg = "dummie" },
+	{ name = "lock", text = "", fg = "dummie" },
+	{ name = "log", text = "󰌱", fg = "dummie" },
+	{ name = "lrc", text = "󰨖", fg = "dummie" },
+	{ name = "lua", text = "", fg = "dummie" },
+	{ name = "luac", text = "", fg = "dummie" },
+	{ name = "luau", text = "", fg = "dummie" },
+	{ name = "m", text = "", fg = "dummie" },
+	{ name = "m3u", text = "󰲹", fg = "dummie" },
+	{ name = "m3u8", text = "󰲹", fg = "dummie" },
+	{ name = "m4a", text = "", fg = "dummie" },
+	{ name = "m4v", text = "", fg = "dummie" },
+	{ name = "magnet", text = "", fg = "dummie" },
+	{ name = "makefile", text = "", fg = "dummie" },
+	{ name = "markdown", text = "", fg = "dummie" },
+	{ name = "material", text = "", fg = "dummie" },
+	{ name = "md", text = "", fg = "dummie" },
+	{ name = "md5", text = "󰕥", fg = "dummie" },
+	{ name = "mdx", text = "", fg = "dummie" },
+	{ name = "mint", text = "󰌪", fg = "dummie" },
+	{ name = "mjs", text = "", fg = "dummie" },
+	{ name = "mk", text = "", fg = "dummie" },
+	{ name = "mkv", text = "", fg = "dummie" },
+	{ name = "ml", text = "", fg = "dummie" },
+	{ name = "mli", text = "", fg = "dummie" },
+	{ name = "mm", text = "", fg = "dummie" },
+	{ name = "mo", text = "", fg = "dummie" },
+	{ name = "mobi", text = "", fg = "dummie" },
+	{ name = "mojo", text = "", fg = "dummie" },
+	{ name = "mov", text = "", fg = "dummie" },
+	{ name = "mp3", text = "", fg = "dummie" },
+	{ name = "mp4", text = "", fg = "dummie" },
+	{ name = "mpp", text = "", fg = "dummie" },
+	{ name = "msf", text = "", fg = "dummie" },
+	{ name = "mts", text = "", fg = "dummie" },
+	{ name = "mustache", text = "", fg = "dummie" },
+	{ name = "nfo", text = "", fg = "dummie" },
+	{ name = "nim", text = "", fg = "dummie" },
+	{ name = "nix", text = "", fg = "dummie" },
+	{ name = "norg", text = "", fg = "dummie" },
+	{ name = "nswag", text = "", fg = "dummie" },
+	{ name = "nu", text = "", fg = "dummie" },
+	{ name = "o", text = "", fg = "dummie" },
+	{ name = "obj", text = "󰆧", fg = "dummie" },
+	{ name = "odf", text = "", fg = "dummie" },
+	{ name = "odg", text = "", fg = "dummie" },
+	{ name = "odin", text = "󰟢", fg = "dummie" },
+	{ name = "odp", text = "", fg = "dummie" },
+	{ name = "ods", text = "", fg = "dummie" },
+	{ name = "odt", text = "", fg = "dummie" },
+	{ name = "oga", text = "", fg = "dummie" },
+	{ name = "ogg", text = "", fg = "dummie" },
+	{ name = "ogv", text = "", fg = "dummie" },
+	{ name = "ogx", text = "", fg = "dummie" },
+	{ name = "opus", text = "", fg = "dummie" },
+	{ name = "org", text = "", fg = "dummie" },
+	{ name = "otf", text = "", fg = "dummie" },
+	{ name = "out", text = "", fg = "dummie" },
+	{ name = "part", text = "", fg = "dummie" },
+	{ name = "patch", text = "", fg = "dummie" },
+	{ name = "pck", text = "", fg = "dummie" },
+	{ name = "pcm", text = "", fg = "dummie" },
+	{ name = "pdf", text = "", fg = "dummie" },
+	{ name = "php", text = "", fg = "dummie" },
+	{ name = "pl", text = "", fg = "dummie" },
+	{ name = "pls", text = "󰲹", fg = "dummie" },
+	{ name = "ply", text = "󰆧", fg = "dummie" },
+	{ name = "pm", text = "", fg = "dummie" },
+	{ name = "png", text = "", fg = "dummie" },
+	{ name = "po", text = "", fg = "dummie" },
+	{ name = "pot", text = "", fg = "dummie" },
+	{ name = "pp", text = "", fg = "dummie" },
+	{ name = "ppt", text = "󰈧", fg = "dummie" },
+	{ name = "pptx", text = "󰈧", fg = "dummie" },
+	{ name = "prisma", text = "", fg = "dummie" },
+	{ name = "pro", text = "", fg = "dummie" },
+	{ name = "ps1", text = "󰨊", fg = "dummie" },
+	{ name = "psb", text = "", fg = "dummie" },
+	{ name = "psd", text = "", fg = "dummie" },
+	{ name = "psd1", text = "󰨊", fg = "dummie" },
+	{ name = "psm1", text = "󰨊", fg = "dummie" },
+	{ name = "pub", text = "󰷖", fg = "dummie" },
+	{ name = "pxd", text = "", fg = "dummie" },
+	{ name = "pxi", text = "", fg = "dummie" },
+	{ name = "py", text = "", fg = "dummie" },
+	{ name = "pyc", text = "", fg = "dummie" },
+	{ name = "pyd", text = "", fg = "dummie" },
+	{ name = "pyi", text = "", fg = "dummie" },
+	{ name = "pyo", text = "", fg = "dummie" },
+	{ name = "pyw", text = "", fg = "dummie" },
+	{ name = "pyx", text = "", fg = "dummie" },
+	{ name = "qm", text = "", fg = "dummie" },
+	{ name = "qml", text = "", fg = "dummie" },
+	{ name = "qrc", text = "", fg = "dummie" },
+	{ name = "qss", text = "", fg = "dummie" },
+	{ name = "query", text = "", fg = "dummie" },
+	{ name = "R", text = "󰟔", fg = "dummie" },
+	{ name = "r", text = "󰟔", fg = "dummie" },
+	{ name = "rake", text = "", fg = "dummie" },
+	{ name = "rar", text = "", fg = "dummie" },
+	{ name = "rasi", text = "", fg = "dummie" },
+	{ name = "razor", text = "󱦘", fg = "dummie" },
+	{ name = "rb", text = "", fg = "dummie" },
+	{ name = "res", text = "", fg = "dummie" },
+	{ name = "resi", text = "", fg = "dummie" },
+	{ name = "rlib", text = "", fg = "dummie" },
+	{ name = "rmd", text = "", fg = "dummie" },
+	{ name = "rproj", text = "󰗆", fg = "dummie" },
+	{ name = "rs", text = "", fg = "dummie" },
+	{ name = "rss", text = "", fg = "dummie" },
+	{ name = "s", text = "", fg = "dummie" },
+	{ name = "sass", text = "", fg = "dummie" },
+	{ name = "sbt", text = "", fg = "dummie" },
+	{ name = "sc", text = "", fg = "dummie" },
+	{ name = "scad", text = "", fg = "dummie" },
+	{ name = "scala", text = "", fg = "dummie" },
+	{ name = "scm", text = "󰘧", fg = "dummie" },
+	{ name = "scss", text = "", fg = "dummie" },
+	{ name = "sh", text = "", fg = "dummie" },
+	{ name = "sha1", text = "󰕥", fg = "dummie" },
+	{ name = "sha224", text = "󰕥", fg = "dummie" },
+	{ name = "sha256", text = "󰕥", fg = "dummie" },
+	{ name = "sha384", text = "󰕥", fg = "dummie" },
+	{ name = "sha512", text = "󰕥", fg = "dummie" },
+	{ name = "sig", text = "󰘧", fg = "dummie" },
+	{ name = "signature", text = "󰘧", fg = "dummie" },
+	{ name = "skp", text = "󰻫", fg = "dummie" },
+	{ name = "sldasm", text = "󰻫", fg = "dummie" },
+	{ name = "sldprt", text = "󰻫", fg = "dummie" },
+	{ name = "slim", text = "", fg = "dummie" },
+	{ name = "sln", text = "", fg = "dummie" },
+	{ name = "slnx", text = "", fg = "dummie" },
+	{ name = "slvs", text = "󰻫", fg = "dummie" },
+	{ name = "sml", text = "󰘧", fg = "dummie" },
+	{ name = "so", text = "", fg = "dummie" },
+	{ name = "sol", text = "", fg = "dummie" },
+	{ name = "spec.js", text = "", fg = "dummie" },
+	{ name = "spec.jsx", text = "", fg = "dummie" },
+	{ name = "spec.ts", text = "", fg = "dummie" },
+	{ name = "spec.tsx", text = "", fg = "dummie" },
+	{ name = "spx", text = "", fg = "dummie" },
+	{ name = "sql", text = "", fg = "dummie" },
+	{ name = "sqlite", text = "", fg = "dummie" },
+	{ name = "sqlite3", text = "", fg = "dummie" },
+	{ name = "srt", text = "󰨖", fg = "dummie" },
+	{ name = "ssa", text = "󰨖", fg = "dummie" },
+	{ name = "ste", text = "󰻫", fg = "dummie" },
+	{ name = "step", text = "󰻫", fg = "dummie" },
+	{ name = "stl", text = "󰆧", fg = "dummie" },
+	{ name = "stories.js", text = "", fg = "dummie" },
+	{ name = "stories.jsx", text = "", fg = "dummie" },
+	{ name = "stories.mjs", text = "", fg = "dummie" },
+	{ name = "stories.svelte", text = "", fg = "dummie" },
+	{ name = "stories.ts", text = "", fg = "dummie" },
+	{ name = "stories.tsx", text = "", fg = "dummie" },
+	{ name = "stories.vue", text = "", fg = "dummie" },
+	{ name = "stp", text = "󰻫", fg = "dummie" },
+	{ name = "strings", text = "", fg = "dummie" },
+	{ name = "styl", text = "", fg = "dummie" },
+	{ name = "sub", text = "󰨖", fg = "dummie" },
+	{ name = "sublime", text = "", fg = "dummie" },
+	{ name = "suo", text = "", fg = "dummie" },
+	{ name = "sv", text = "󰍛", fg = "dummie" },
+	{ name = "svelte", text = "", fg = "dummie" },
+	{ name = "svg", text = "󰜡", fg = "dummie" },
+	{ name = "svgz", text = "󰜡", fg = "dummie" },
+	{ name = "svh", text = "󰍛", fg = "dummie" },
+	{ name = "swift", text = "", fg = "dummie" },
+	{ name = "t", text = "", fg = "dummie" },
+	{ name = "tbc", text = "󰛓", fg = "dummie" },
+	{ name = "tcl", text = "󰛓", fg = "dummie" },
+	{ name = "templ", text = "", fg = "dummie" },
+	{ name = "terminal", text = "", fg = "dummie" },
+	{ name = "test.js", text = "", fg = "dummie" },
+	{ name = "test.jsx", text = "", fg = "dummie" },
+	{ name = "test.ts", text = "", fg = "dummie" },
+	{ name = "test.tsx", text = "", fg = "dummie" },
+	{ name = "tex", text = "", fg = "dummie" },
+	{ name = "tf", text = "", fg = "dummie" },
+	{ name = "tfvars", text = "", fg = "dummie" },
+	{ name = "tgz", text = "", fg = "dummie" },
+	{ name = "tmpl", text = "", fg = "dummie" },
+	{ name = "tmux", text = "", fg = "dummie" },
+	{ name = "toml", text = "", fg = "dummie" },
+	{ name = "torrent", text = "", fg = "dummie" },
+	{ name = "tres", text = "", fg = "dummie" },
+	{ name = "ts", text = "", fg = "dummie" },
+	{ name = "tscn", text = "", fg = "dummie" },
+	{ name = "tsconfig", text = "", fg = "dummie" },
+	{ name = "tsx", text = "", fg = "dummie" },
+	{ name = "ttf", text = "", fg = "dummie" },
+	{ name = "twig", text = "", fg = "dummie" },
+	{ name = "txt", text = "󰈙", fg = "dummie" },
+	{ name = "txz", text = "", fg = "dummie" },
+	{ name = "typ", text = "", fg = "dummie" },
+	{ name = "typoscript", text = "", fg = "dummie" },
+	{ name = "ui", text = "", fg = "dummie" },
+	{ name = "v", text = "󰍛", fg = "dummie" },
+	{ name = "vala", text = "", fg = "dummie" },
+	{ name = "vert", text = "", fg = "dummie" },
+	{ name = "vh", text = "󰍛", fg = "dummie" },
+	{ name = "vhd", text = "󰍛", fg = "dummie" },
+	{ name = "vhdl", text = "󰍛", fg = "dummie" },
+	{ name = "vi", text = "", fg = "dummie" },
+	{ name = "vim", text = "", fg = "dummie" },
+	{ name = "vsh", text = "", fg = "dummie" },
+	{ name = "vsix", text = "", fg = "dummie" },
+	{ name = "vue", text = "", fg = "dummie" },
+	{ name = "wasm", text = "", fg = "dummie" },
+	{ name = "wav", text = "", fg = "dummie" },
+	{ name = "webm", text = "", fg = "dummie" },
+	{ name = "webmanifest", text = "", fg = "dummie" },
+	{ name = "webp", text = "", fg = "dummie" },
+	{ name = "webpack", text = "󰜫", fg = "dummie" },
+	{ name = "wma", text = "", fg = "dummie" },
+	{ name = "wmv", text = "", fg = "dummie" },
+	{ name = "woff", text = "", fg = "dummie" },
+	{ name = "woff2", text = "", fg = "dummie" },
+	{ name = "wrl", text = "󰆧", fg = "dummie" },
+	{ name = "wrz", text = "󰆧", fg = "dummie" },
+	{ name = "wv", text = "", fg = "dummie" },
+	{ name = "wvc", text = "", fg = "dummie" },
+	{ name = "x", text = "", fg = "dummie" },
+	{ name = "xaml", text = "󰙳", fg = "dummie" },
+	{ name = "xcf", text = "", fg = "dummie" },
+	{ name = "xcplayground", text = "", fg = "dummie" },
+	{ name = "xcstrings", text = "", fg = "dummie" },
+	{ name = "xls", text = "󰈛", fg = "dummie" },
+	{ name = "xlsx", text = "󰈛", fg = "dummie" },
+	{ name = "xm", text = "", fg = "dummie" },
+	{ name = "xml", text = "󰗀", fg = "dummie" },
+	{ name = "xpi", text = "", fg = "dummie" },
+	{ name = "xslt", text = "󰗀", fg = "dummie" },
+	{ name = "xul", text = "", fg = "dummie" },
+	{ name = "xz", text = "", fg = "dummie" },
+	{ name = "yaml", text = "", fg = "dummie" },
+	{ name = "yml", text = "", fg = "dummie" },
+	{ name = "zig", text = "", fg = "dummie" },
+	{ name = "zip", text = "", fg = "dummie" },
+	{ name = "zsh", text = "", fg = "dummie" },
+	{ name = "zst", text = "", fg = "dummie" },
+	{ name = "🔥", text = "", fg = "dummie" },
+]
+conds = [
+	# Special files
+	{ if = "orphan", text = "", fg = "dummie" },
+	{ if = "link", text = "", fg = "dummie" },
+	{ if = "block", text = "", fg = "dummie" },
+	{ if = "char", text = "", fg = "dummie" },
+	{ if = "fifo", text = "", fg = "dummie" },
+	{ if = "sock", text = "", fg = "dummie" },
+	{ if = "sticky", text = "", fg = "dummie" },
+	{ if = "dummy", text = "", fg = "dummie" },
+
+	# Fallback
+	{ if = "dir", text = "", fg = "dummie" },
+	{ if = "exec", text = "", fg = "dummie" },
+	{ if = "!dir", text = "", fg = "dummie" },
+]
+# : }}}

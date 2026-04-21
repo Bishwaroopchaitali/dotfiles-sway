@@ -1,2 +1,0 @@
-@define-color {{"fg"}} {{colors.primary.default.rgb}};
-@define-color {{"fg-faded"}} {{colors.primary.default.rgba | set_alpha: 0.5}};

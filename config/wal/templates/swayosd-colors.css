@@ -1,0 +1,4 @@
+* {
+  --bg-color: rgba({color0.rgb}, 0.85);
+  --fg-color: rgb({color4.rgb});
+}
