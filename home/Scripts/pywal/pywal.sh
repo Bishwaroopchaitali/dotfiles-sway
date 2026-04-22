@@ -134,7 +134,7 @@ else
   echo "Kitty failed to transfer colors "
 fi
 #!!!---------------------------------------!!!----------------------------------------!!!#
-cp $HOME/Scripts/pywal/yazi-theme.toml $HOME/Scripts/pywal/yazi-theme-modified.toml
+cp $HOME/Scripts/pywal/yazi-theme.toml $HOME/Scripts/pywal/yazi-theme-modified.toml &
 wait $!
 sed -i "s/dummie/$fg_in_hex/g" $HOME/Scripts/pywal/yazi-theme-modified.toml
 if [[ $? -ne 0 ]]; then
@@ -142,6 +142,22 @@ if [[ $? -ne 0 ]]; then
   exit 1
 else
   echo "Yazi colors transferred "
+fi
+#!!!---------------------------------------!!!----------------------------------------!!!#
+rm -rf $HOME/Scripts/pywal/YAMIS-recolor-modified &
+wait $!
+cp -r $HOME/Scripts/pywal/YAMIS-recolor $HOME/Scripts/pywal/YAMIS-recolor-modified &
+wait $!
+find $HOME/Scripts/pywal/YAMIS-recolor-modified -type f -name "*.svg" -exec sed -i "s/dummie/$fg_in_hex/g" {} +
+if [[ $? -ne 0 ]]; then
+  echo "Something went wrong..."
+  exit 1
+fi
+ln -sf $HOME/Scripts/pywal/YAMIS-recolor-modified $HOME/.local/share/icons/YAMIS
+if [[ $? -eq 0 ]]; then
+  echo "System icon colors transferred "
+else
+  echo "System icon colors failed to transfer "
 fi
 #!!!---------------------------------------!!!----------------------------------------!!!#
 
