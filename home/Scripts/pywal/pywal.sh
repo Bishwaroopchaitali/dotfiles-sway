@@ -179,6 +179,7 @@ mv ~/.cache/wal/swayosd-colors.css ~/.config/swayosd/colors.css
 pkill swayosd-server &
 wait $!
 swayosd-server &>/dev/null &
+disown
 if [[ $? -eq 0 ]]; then
   echo "Swayosd reloaded "
 else
