@@ -5,7 +5,7 @@ Todo list top priority:
 2. clipse, bluetui, wiremix, nmtui, rofi alternatives using scripts.
 3. Figure out how profiles in firefox work to import browser settings.
 4. Refine Main pywal script.
-5. Cutmize linux tty login to look better. And match swaylock to look like it.
+5. Customize linux tty login to look better. And match swaylock to look like it.
 6. maintain a list of custom hotkeys used all over the system
 
 #-----------------------------------------------------------------------------------------#
