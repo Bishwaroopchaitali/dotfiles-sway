@@ -37,7 +37,7 @@ padding = { open = "█", close = "█" }
 
 [tabs]
 active    = { fg = "dummie", bold = true, bg = "#000000" }
-inactive  = {}
+inactive  = { fg = "lightyellow", bg = "#000000" }
 sep_inner = { open = "[", close = "]" }
 
 # : ]]]
