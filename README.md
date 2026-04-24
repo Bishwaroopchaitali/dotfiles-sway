@@ -1,5 +1,14 @@
 # Instructions to build setup
 
+Todo list top priority:
+1. Custom software updating script containing multiple sub scripts
+2. clipse, bluetui, wiremix, nmtui, rofi alternatives using scripts.
+3. Figure out how profiles in firefox work to import browser settings.
+4. Refine Main pywal script.
+5. Cutmize linux tty login to look better. And match swaylock to look like it.
+
+#-----------------------------------------------------------------------------------------#
+
 - WM: swayfx
 - Lock screen: swaylock, match the vibe of tty 
 - Login: tty
