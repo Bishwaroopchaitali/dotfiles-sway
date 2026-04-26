@@ -1,12 +1,17 @@
 # Instructions to build setup
 
 Todo list top priority:
+0. Dont forget to git pull the repo next time using it
 1. Custom software updating script containing multiple sub scripts
 2. clipse, bluetui, wiremix, nmtui, rofi alternatives using scripts.
 3. Figure out how profiles in firefox work to import browser settings.
 4. Refine Main pywal script.
 5. Customize linux tty login to look better. And match swaylock to look like it.
 6. maintain a list of custom hotkeys used all over the system
+7. meta+E hotkey to open yazi directly needs to be removed. and only keep meta+E open yazi when kitty open
+8. configure vs code to behave like lazy-vim
+9. configure and use kid3 for audio metadata editing
+10. fix personal audio library metadata, and figure out a way to handle sharing it easily and downloading it easily
 
 #-----------------------------------------------------------------------------------------#
 
