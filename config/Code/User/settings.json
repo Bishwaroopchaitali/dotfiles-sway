@@ -28,4 +28,5 @@
         "menu.background": "#000000",
         "editorGroupHeader.tabsBackground": "#000000"
     },
+    "editor.fontFamily": "'CaskaydiaCove Nerd Font Mono'",
 }
