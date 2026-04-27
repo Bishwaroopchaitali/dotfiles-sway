@@ -29,4 +29,5 @@
         "editorGroupHeader.tabsBackground": "#000000"
     },
     "editor.fontFamily": "'CaskaydiaCove Nerd Font Mono'",
+    "editor.fontSize": 11,
 }
