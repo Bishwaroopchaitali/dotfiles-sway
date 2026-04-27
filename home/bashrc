@@ -1,4 +1,4 @@
-# Currently shell prompt is always green, but later theme it with matugen
+#My custom changes
 PS1='\[\e[32m\]\w\[\e[0m\] ❯ '
 alias c='clear'
 alias cdc='cd ~ && clear'
@@ -7,10 +7,18 @@ alias swayset='cd ~/.config/sway/config.d/'
 
 # Yazi functioning
 function y() {
-	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
-	command yazi "$@" --cwd-file="$tmp"
-	IFS= read -r -d '' cwd < "$tmp"
-	[ "$cwd" != "$PWD" ] && [ -d "$cwd" ] && builtin cd -- "$cwd"
-	rm -f -- "$tmp"
+  local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+  command yazi "$@" --cwd-file="$tmp"
+  IFS= read -r -d '' cwd <"$tmp"
+  [ "$cwd" != "$PWD" ] && [ -d "$cwd" ] && builtin cd -- "$cwd"
+  rm -f -- "$tmp"
 }
+# Bind Alt+y to the y function
+bind '"\ey": "y\n"'
 
+#Adding directories to PATH variable
+export PATH="/home/$USER/Applications/Tui/:$PATH"
+export PATH="/home/$USER/Applications/Gui/:$PATH"
+export PATH="/home/$USER/Scripts/pywal/:$PATH"
+export PATH="/home/$USER/Scripts/sway/:$PATH"
+export PATH="/home/$USER/Applications/Gui/VSCode/bin/:$PATH"

@@ -7,7 +7,7 @@ Todo list top priority:
 4. Refine Main pywal script.
 5. Customize linux tty login to look better. And match swaylock to look like it.
 6. maintain a list of custom hotkeys used all over the system
-7. meta+E hotkey to open yazi directly needs to be removed. and only keep meta+E open yazi when kitty open. And also fix issue of win+E in terminal opening yazi but not in sync with current directory
+7. Theme vs code via pywal
 8. configure vs code to behave like lazy-vim
 9. configure and use kid3 for audio metadata editing
 10. fix personal audio library metadata, and figure out a way to handle sharing it easily and downloading it easily
