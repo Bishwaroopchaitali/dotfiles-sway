@@ -11,6 +11,7 @@ Todo list top priority:
 8. configure vs code to behave like lazy-vim
 9. configure and use kid3 for audio metadata editing
 10. fix personal audio library metadata, and figure out a way to handle sharing it easily and downloading it easily
+11. Refine mime list to open preffered software for opening files
 
 #-----------------------------------------------------------------------------------------#
 
