@@ -1,0 +1,86 @@
+{
+  //"remove startup page and tips"
+  "workbench.startupEditor": "none",        //removes welcome page
+  "workbench.tips.enabled": false,        //removes tips and shortcuts on the opening page
+  
+  //"some regular/obvious settings"
+  "workbench.colorTheme": "Ayu Dark Bordered",
+  "workbench.iconTheme": "material-icon-theme",
+  "editor.wordWrap": "on",
+  "workbench.activityBar.location": "hidden",     //removes the left bar
+  "editor.formatOnSave": true, 
+  "breadcrumbs.enabled": false,
+  "workbench.statusBar.visible": false,       //removes the status bar in the bottom
+  "code-runner.runInTerminal": true,   //extension to run code in any lang directly in the termninal via keybinds
+  "window.restoreWindows": "none",      //doesn't restore previous state of editor
+  "terminal.integrated.enablePersistentSessions": false,    //removes "history restored" pop up in the built in terminal
+
+  //"remove the title bar"
+  "window.customTitleBarVisibility": "never",
+  "window.titleBarStyle": "native",
+  "custom-ui-style.electron": {
+    "titleBarStyle" : "hidden"    //remove the hidden option to bring back title bar
+  },
+
+  //"vim settings"
+  "editor.lineNumbers": "relative",
+  "vim.leader": "<Space>",
+   "vim.hlsearch": true,      //enables using the slash search in vim
+  "vim.normalModeKeyBindingsNonRecursive": [
+    //"NAVIGATION"
+    //switch b/w tabs using Shift+h & Shift+l
+    { "before": ["<S-h>"], "commands": [":bprevious"] },
+    { "before": ["<S-l>"], "commands": [":bnext"] },
+
+    //split into panes
+    { "before": ["leader", "v"], "commands": [":vsplit"] },     //vertical split
+    { "before": ["leader", "u"], "commands": [":split"] },      //horizontal split
+
+    //switch b/w panes
+    {
+      "before": ["leader", "h"],
+      "commands": ["workbench.action.focusLeftGroup"]
+    },
+    {
+      "before": ["leader", "j"],
+      "commands": ["workbench.action.focusBelowGroup"]
+    },
+    {
+      "before": ["leader", "k"],
+      "commands": ["workbench.action.focusAboveGroup"]
+    },
+    {
+      "before": ["leader", "l"],
+      "commands": ["workbench.action.focusRightGroup"]
+    },
+    
+    //close tab
+    {
+      "before": ["leader", "w"],
+      "commands": ["workbench.action.closeActiveEditor"]
+    }, 
+
+    //save file
+    {
+      "before": ["leader", "s"],
+      "commands": ["workbench.action.files.save"]
+    }, 
+
+    //quick search files in the project
+    {
+      "before": ["leader", "f"],
+      "commands": ["workbench.action.quickOpen"]
+    }
+  ],
+
+"vim.visualModeKeyBindings": [
+    // Stay in visual mode while indenting
+    { "before": ["<"], "commands": ["editor.action.outdentLines"] },
+    { "before": [">"], "commands": ["editor.action.indentLines"] },
+    // Move selected lines while staying in visual mode
+    { "before": ["J"], "commands": ["editor.action.moveLinesDownAction"] },
+    { "before": ["K"], "commands": ["editor.action.moveLinesUpAction"] },
+    // toggle comment selection
+    { "before": ["leader", "c"], "commands": ["editor.action.commentLine"] }
+  ],
+}

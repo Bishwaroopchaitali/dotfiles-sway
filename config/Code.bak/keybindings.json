@@ -1,0 +1,57 @@
+// Place your key bindings in this file to override the defaults
+[
+  {
+    "key": "ctrl+tab",
+    "command": "workbench.action.nextEditor"      //to hide the overview of present files while switching tabs
+  },
+  {
+    "key": "ctrl+shift+tab",
+    "command": "workbench.action.previousEditor"  //to hide the overview of present files while switching tabs
+  },
+  {
+    "key": "alt+`",
+    "command": "workbench.action.terminal.toggleTerminal"
+  },
+  {
+    "key": "alt+x",
+    "command": "workbench.action.terminal.kill"
+  },
+  {
+    "key": "alt+q",
+    "command": "workbench.action.toggleSidebarVisibility"
+  },
+  {
+    "key": "alt+q",
+    "command": "workbench.files.action.focusFilesExplorer",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "n",
+    "command": "explorer.newFile",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+  {
+    "key": "r",
+    "command": "renameFile",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+  {
+    "key": "shift+n",
+    "command": "explorer.newFolder",
+    "when": "explorerViewletFocus"
+  },
+  {
+    "key": "ctrl+shift+n",
+    "command": "workbench.action.newWindow",
+    "when": "!explorerViewletFocus"
+  },
+  {
+    "key": "d",
+    "command": "deleteFile",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+  {
+    "key": "alt+r",
+    "command": "code-runner.run",
+  },
+]
